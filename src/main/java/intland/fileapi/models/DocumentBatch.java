@@ -1,20 +1,20 @@
-package main.java.intland.fileapi.models;
+package intland.fileapi.models;
 
 public class DocumentBatch {
-	
-    private final String content;
-    private final int remainingParagraphs;
 
-    public DocumentBatch(String content, int remainingParagraphs) {
-        this.content = content;
-        this.remainingParagraphs = remainingParagraphs;
-    }
+	private final String[] paragraphs;
+	private final int remainingParagraphs;
 
-    public int getRemainingParagraphs() {
-        return remainingParagraphs;
-    }
+	public DocumentBatch(String[] paragraphs, int remainingParagraphs) {
+		this.paragraphs = paragraphs;
+		this.remainingParagraphs = remainingParagraphs;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public int getRemainingParagraphs() {
+		return remainingParagraphs;
+	}
+
+	public String[] getParagraphs() {
+		return paragraphs;
+	}
 }
