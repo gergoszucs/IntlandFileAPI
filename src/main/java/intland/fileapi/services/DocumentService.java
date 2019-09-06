@@ -15,17 +15,21 @@ public class DocumentService implements IDocumentService {
 
 	@Override
 	public DocumentBatch getDocumentBatch(int skip, int take) {
-		int remainingParagraphs = documentLength - (skip + take);
+		int requestedParagraphs = skip + take;
 		
-		return new DocumentBatch(generateRandomParagraphs(skip, take), remainingParagraphs > 0 ? remainingParagraphs : 0);
+		if(requestedParagraphs > documentLength) {
+			// Disregard take, return what is left
+			return new DocumentBatch(generateRandomParagraphs(documentLength - skip), 0);
+		} else {
+			return new DocumentBatch(generateRandomParagraphs(take), documentLength - requestedParagraphs);
+		}
 	}
 
-	private String[] generateRandomParagraphs(int existingParagraphs, int paragraphsToGenerate) {
+	private String[] generateRandomParagraphs(int paragraphsToGenerate) {
 		String[] paragraphs = new String[paragraphsToGenerate];
 		
 		for(int i=0; i<paragraphsToGenerate; i++) {
-			int paragraphIndex = existingParagraphs + i + 1;
-			paragraphs[i] = "<p>" + paragraphIndex + " lorem ipsum<p>";
+			paragraphs[i] = lorem.getHtmlParagraphs(1, 1);
 		}
 		
 		return paragraphs;
