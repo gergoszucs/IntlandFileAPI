@@ -1,4 +1,4 @@
-package main.java.intland.fileapi;
+package intland.fileapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
