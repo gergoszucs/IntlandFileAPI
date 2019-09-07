@@ -8,10 +8,14 @@
 
 It is a simple REST API that produces a randomly generated document of paragraphs in batches.
 
+##### Prerequisites
+
+- JDK 1.8
+
 ##### After cloning it can be built with
 
 	./gradlew build
 
 ##### Then executed with
 
-	java -jar IntlandFileApi.jar
+	java -jar build/libs/IntlandFileApi-1.0.0.jar
