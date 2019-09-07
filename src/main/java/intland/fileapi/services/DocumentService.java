@@ -3,11 +3,11 @@ package intland.fileapi.services;
 import org.springframework.stereotype.Service;
 import com.thedeanda.lorem.Lorem;
 import com.thedeanda.lorem.LoremIpsum;
-import intland.fileapi.interfaces.IDocumentService;
+import intland.fileapi.interfaces.BatchedDocumentService;
 import intland.fileapi.models.DocumentBatch;
 
 @Service
-public class DocumentService implements IDocumentService {
+public class DocumentService implements BatchedDocumentService {
 	// The document itself should be fetched from a remote storage
 	// Now we just store an arbitrary length and generate its content randomly
 	private int documentLength = 1000000;

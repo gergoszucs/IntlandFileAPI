@@ -1,6 +1,6 @@
 package intland.fileapi.controllers;
 
-import intland.fileapi.interfaces.IDocumentService;
+import intland.fileapi.interfaces.BatchedDocumentService;
 import intland.fileapi.models.DocumentBatch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 class DocumentController {
 
 	@Autowired
-    private IDocumentService documentService;
+    private BatchedDocumentService documentService;
 	
 	@CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/document")
